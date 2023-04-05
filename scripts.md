@@ -138,3 +138,11 @@ cat in/*/* | egrep -w 'url|robots|linkfinder' | awk -F" " '{print $NF}' | tee ou
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### egrep-urls-from-list-of-files
+<img src="https://img.shields.io/badge/language-bash-black">
+Extract urls from list of files with regex.
+```
+find in -type f -exec cat {} + | egrep -o 'https?://[^ ]+' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
