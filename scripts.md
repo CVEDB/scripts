@@ -54,3 +54,11 @@ find in -type f -exec cat {} + | awk -F " " '{print $3}' | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### cat-from-to-lines
+<img src="https://img.shields.io/badge/language-bash-black">
+Cat file from line number to line number with sed.
+```
+sed -n 1,100p in/*/* | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
