@@ -393,3 +393,11 @@ find in -type f -exec cat {} + | grep 'Host' | awk -F'[ /]' '{print $3":"$5}' | 
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### mv-regex-files
+<img src="https://img.shields.io/badge/language-bash-black">
+Move specific files from in to out.
+```
+mv in/*/*-takeover* out/
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
