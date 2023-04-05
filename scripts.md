@@ -130,3 +130,11 @@ cat in/*/* | sed 's/\.$//' | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### egrep-multiple-values
+<img src="https://img.shields.io/badge/language-bash-black">
+Egrep multiple values and print last in array.
+```
+cat in/*/* | egrep -w 'url|robots|linkfinder' | awk -F" " '{print $NF}' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
