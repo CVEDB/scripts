@@ -157,3 +157,11 @@ EOF
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### extract-ips-with-regex
+<img src="https://img.shields.io/badge/language-bash-black">
+Extract ip addresses from files with regex.
+```
+find in -type f -exec cat {} + | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
