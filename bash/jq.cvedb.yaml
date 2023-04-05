@@ -1,0 +1,8 @@
+name: jq
+description: JQ for parsing json results.
+author: cvedb
+author_info: https://cvedb.github.io
+script:
+  cat in/*/* | jq -r '.results | .[]| "\(.url) \(.status) \(.length) \(.redirectlocation)
+  "' | tee out/output.txt
+language: bash
