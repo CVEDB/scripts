@@ -353,3 +353,11 @@ cat out/* > out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### get-js-links-from-urls
+<img src="https://img.shields.io/badge/language-bash-black">
+Get all js links from list of urls
+```
+find in -type f -exec cat {} +  | grep -Eo "https?://\S+?\.js" | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
