@@ -417,6 +417,14 @@ find in -type f -exec cat {} + | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### recursively-cat-with-extension
+<img src="https://img.shields.io/badge/language-bash-black">
+Cat all files with custom extension
+```
+find in -name '*.txt' -exec cat {} \;  | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### remove-whitespaces
 <img src="https://img.shields.io/badge/language-bash-black">
 Remove whitespaces to files when appending values at the end of lines.
