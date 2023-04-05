@@ -469,6 +469,22 @@ done < in/$IP_ADDRESSES_INPUT_NODE/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### sed-add-at-beginning
+<img src="https://img.shields.io/badge/language-bash-black">
+Add string at the beginning of each line using sed.
+```
+find in -type f -exec cat {} + | sed 's/^/https:\/\//' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### sed-add-at-end
+<img src="https://img.shields.io/badge/language-bash-black">
+Add string at the end of each line using sed.
+```
+find in -type f -exec cat {} + | sed 's/$/\/FUZZ/' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### unzip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Unzip files in in folder to out folder
