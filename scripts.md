@@ -173,3 +173,11 @@ for f in $(find in -mindepth 3 -type f -exec grep 'root:' -R {} + | cut -d":" -f
 ```
 Contributed by [gliga](https://cvedb.github.io)
 ---
+### generate-random-passwords
+<img src="https://img.shields.io/badge/language-bash-black">
+Utility to generate random passwords based on pwgen.
+```
+pwgen -N 100 5 | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
