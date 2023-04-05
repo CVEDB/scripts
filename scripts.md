@@ -146,3 +146,14 @@ find in -type f -exec cat {} + | egrep -o 'https?://[^ ]+' | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### eof-raw-data
+<img src="https://img.shields.io/badge/language-bash-black">
+Paste raw data and add it to output.
+```
+cat << "EOF" | tee out/output.txt
+ADD_CONTENT_HERE
+EOF
+
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
