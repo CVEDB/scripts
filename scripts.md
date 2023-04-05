@@ -314,3 +314,42 @@ cat out/* > out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### get-inventory-urls
+<img src="https://img.shields.io/badge/language-bash-black">
+Gather URLs from the Inventory project
+```
+FILE_NAME="urls"
+
+BASE_URL="https://raw.githubusercontent.com/cvedb/inventory/main"
+# Usage:
+#     get_invetory_files FILE_NAME COMPANY
+#     
+#     Example
+#     get_inventory_files spider Netflix
+get_inventory_files() {
+    company=$2
+    file=$1
+    if ! wget "${BASE_URL}/${company}/${file}.txt" -O "out/${company}_${file}.txt" || [ ! -s  "${company}_${file}.txt" ]; then
+        i=00
+        while wget "${BASE_URL}/${company}/${file}_${i}.txt" -O "out/${company}_${file}_${i}.txt"; do
+            i=$(printf '%02d' $((i+1)))
+        done
+    fi
+}
+
+echo "Downloading the targets index"
+wget ${BASE_URL}/targets.json
+jq -r '.targets[].name' targets.json > companies.txt
+
+echo "Downloading $FILE_NAME files"
+while read company; do
+    echo $company
+    get_inventory_files $FILE_NAME $company
+done < companies.txt
+
+find out -type f -empty -delete
+cat out/* > out/output.txt
+
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
