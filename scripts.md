@@ -501,6 +501,14 @@ find in -type f -exec cat {} +  | sort -n | uniq | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### sort
+<img src="https://img.shields.io/badge/language-bash-black">
+Sort all data in files in in directory.
+```
+find in -type f -exec cat {} + | sort | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### unzip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Unzip files in in folder to out folder
