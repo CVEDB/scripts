@@ -485,6 +485,22 @@ find in -type f -exec cat {} + | sed 's/$/\/FUZZ/' | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### sed-replace-words-in-file
+<img src="https://img.shields.io/badge/language-bash-black">
+Replace "foo" "bar" with words you want to replace in in folder.
+```
+sed 's/foo/bar/g' in/* | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### sort-uniq
+<img src="https://img.shields.io/badge/language-bash-black">
+Sort all data and delete duplicates in files in in directory.
+```
+find in -type f -exec cat {} +  | sort -n | uniq | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### unzip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Unzip files in in folder to out folder
