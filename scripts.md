@@ -409,6 +409,22 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### unzip-to-out
+<img src="https://img.shields.io/badge/language-bash-black">
+Unzip files in in folder to out folder
+```
+unzip in/*/*.zip -d out
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### wget-list-to-out
+<img src="https://img.shields.io/badge/language-bash-black">
+Wget list of urls and output to out directory
+```
+wget -i in/*/* --directory-prefix out
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### whois-get-registrant-organization
 <img src="https://img.shields.io/badge/language-bash-black">
 Get registrant organization using whois for domain list file input.
