@@ -46,3 +46,11 @@ find in -type f -exec cat {} + | awk -F " " '{print $2}' | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### awk-take-third-row
+<img src="https://img.shields.io/badge/language-bash-black">
+Extract third column from all files in in directory.
+```
+find in -type f -exec cat {} + | awk -F " " '{print $3}' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
