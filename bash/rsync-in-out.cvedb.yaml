@@ -1,0 +1,6 @@
+name: rsync-in-out
+description: Copy all files from in folders to out folder recursively.
+author: cvedb
+author_info: https://cvedb.github.io
+script: rsync -rtv in out
+language: bash
