@@ -401,3 +401,19 @@ mv in/*/*-takeover* out/
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### parse-nuclei-to-csv
+<img src="https://img.shields.io/badge/language-bash-black">
+Parse nuclei JSON output to create valid csv
+```
+find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .info.tags, description: .info.description, authors: .info.author, severity: .info.severity, type: .type, host: .host, ip: .ip, match: .matched, vuln_name: .matcher_name, extracted_results: .extracted_results|tostring, timestamp: .timestamp}' | jq -r 'to_entries|map(.value)|@csv' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### zip-to-out
+<img src="https://img.shields.io/badge/language-bash-black">
+Zip all files and move to out directory
+```
+zip -r output.zip in && mv output.zip out
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
