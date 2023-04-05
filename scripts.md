@@ -14,3 +14,11 @@ find in -type f -exec cat {} + | awk '{ if ($0 != "") print "ssl.cert.subject.cn
 ```
 Contributed by [trickest](https://cvedb.github.io)
 ---
+### append-headers-to-csv
+<img src="https://img.shields.io/badge/language-bash-black">
+Append headers supplied to csv file without them.
+```
+(echo "vulnerability_id,tags,description,authors,severity,type,host,ip,match,vuln_name,extracted_results,timestamp" && find in -type f -exec cat {} +) > out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
