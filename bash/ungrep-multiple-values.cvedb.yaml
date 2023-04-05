@@ -1,0 +1,8 @@
+name: ungrep-multiple-values
+description: Ungrep multiple strings.
+author: cvedb
+author_info: https://cvedb.github.io
+script:
+  cat in/*/* | egrep -wv 'url|robots|linkfinder' | awk -F" " '{print $NF}' |
+  tee out/output.txt
+language: bash
