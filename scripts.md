@@ -106,3 +106,11 @@ find in -type f -exec cat {} + | wc -l | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### create-wordlist-from-robots-txt
+<img src="https://img.shields.io/badge/language-bash-black">
+One-liner for generating wordlists from robots.txt
+```
+find in/ -mindepth 3 -type f -exec cat {} + | egrep -w "Disallow|Allow: " | awk '{print $2}' | sed 's/^\///' | sed 's/\/$//' | sed '/^[[:space:]]*$/d'| sed 's/\*$//' | sed 's/^\*//' | sed 's/\/$//' | sed -e 's/\*\///g' | sed -e s/\*//g | uniq | tee out/output.txt
+```
+Contributed by [kljunowsky](https://cvedb.github.io)
+---
