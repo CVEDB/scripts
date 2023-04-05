@@ -1,0 +1,6 @@
+name: wget-list-to-out
+description: Wget list of urls and output to out directory
+author: cvedb
+author_info: https://cvedb.github.io
+script: wget -i in/*/* --directory-prefix out
+language: bash
