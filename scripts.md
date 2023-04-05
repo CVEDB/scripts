@@ -122,3 +122,11 @@ cat in/*/* | sed 's/^\.//' | sort -n | uniq | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### delete-dot-as-last-char
+<img src="https://img.shields.io/badge/language-bash-black">
+Delete dot when it is last character, massdns anyone?
+```
+cat in/*/* | sed 's/\.$//' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
