@@ -90,3 +90,19 @@ ls | tee /hive/out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### convert-piped-ip-ports
+<img src="https://img.shields.io/badge/language-bash-black">
+Converts output with | delimiter to ip:port format.
+```
+find in -type f -exec cat {} + | awk -F"|" '{print $1":"$2}' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### count-lines-in-all-files
+<img src="https://img.shields.io/badge/language-bash-black">
+Used to quickly count all lines inside of all files in in folder.
+```
+find in -type f -exec cat {} + | wc -l | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
