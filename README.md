@@ -10,4 +10,4 @@ Check out the [YAML files](bash) or [scripts.md](scripts.md) for a complete list
 All contributions/ideas/suggestions are welcome! Feel free to create a new ticket via [GitHub issues](https://github.com/cvedb/scripts/issues), tweet at us [@cvedb](https://twitter.com/cvedb), or join the conversation on [Discord](https://cvedb.discord.gg/). Check out the [contribution guidelines](CONTRIBUTING.md) for more details.
 
 ## See scripts in action!
-Scripts are an essential part of Trickest workflows. Sign up for a demo on [trickest.com](https://cvedb.github.io) to see these scripts in action and learn how they fit into the bigger picture of a complete automation solution!
+Scripts are an essential part of Trickest workflows. Sign up for a demo on [cvedb.github.io](https://cvedb.github.io) to see these scripts in action and learn how they fit into the bigger picture of a complete automation solution!
