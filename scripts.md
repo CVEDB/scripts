@@ -409,6 +409,14 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### remove-whitespaces
+<img src="https://img.shields.io/badge/language-bash-black">
+Remove whitespaces to files when appending values at the end of lines.
+```
+find in -type f -exec cat {} + | tr  -d '[:blank:]' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### replace-dots-with-dash
 <img src="https://img.shields.io/badge/language-bash-black">
 Replacing dot in strings with dashes
