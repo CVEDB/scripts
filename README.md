@@ -1,7 +1,5 @@
 <h3 align="center">Handy scripts and one-liners to make life easier</h3>
 
-![scripts](scripts.png "scripts")
-
 This repository contains some useful scripts that are designed to do small tasks such as:
 - Parsing the output of a tool to make it easier to read.
 - Cleaning up a file so that it can be processed by a tool.
