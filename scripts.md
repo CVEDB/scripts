@@ -22,3 +22,11 @@ Append headers supplied to csv file without them.
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### awk-print-last-column
+<img src="https://img.shields.io/badge/language-bash-black">
+Prints last column of a files in in folder.
+```
+find in -type f -exec cat {} +  | awk '{print $(NF)}' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
