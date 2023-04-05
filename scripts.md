@@ -409,6 +409,26 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### whois-get-registrant-organization
+<img src="https://img.shields.io/badge/language-bash-black">
+Get registrant organization using whois for domain list file input.
+```
+for domain in `find in -type f -exec cat {} +`; do
+    organization=$(whois $domain | grep 'Organization: ' | head -1 | awk -F ': ' '{print $NF}');
+    echo "$domain: $organization"
+done | tee out/output.txt
+
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### wildcard-domains-from-burp-scope-file
+<img src="https://img.shields.io/badge/language-bash-black">
+Get all wildcard domains from Burp scope json file.
+```
+find in -type f -exec cat {} + | jq '.target.scope.include[] | .host' | grep "*" | sed 's/\\//g' | sed 's/\"^.\*//g' | sed 's/$\"//g' | sed 's/^\.//'  | sort -n | uniq | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### zip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Zip all files and move to out directory
