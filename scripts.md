@@ -409,6 +409,14 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### recursively-cat-all
+<img src="https://img.shields.io/badge/language-bash-black">
+Recursively cat all files in a folder.
+```
+find in -type f -exec cat {} + | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### remove-whitespaces
 <img src="https://img.shields.io/badge/language-bash-black">
 Remove whitespaces to files when appending values at the end of lines.
