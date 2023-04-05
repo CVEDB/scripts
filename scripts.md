@@ -361,3 +361,35 @@ find in -type f -exec cat {} +  | grep -Eo "https?://\S+?\.js" | tee out/output.
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### gunzip-jsons-to-out
+<img src="https://img.shields.io/badge/language-bash-black">
+Extract gunzip file and cat json files to out file.
+```
+gunzip in/*/*.gz && find in -name '*.json' -exec cat {} \;  | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### httpx-json-parse
+<img src="https://img.shields.io/badge/language-bash-black">
+Parse httpx JSON output to line by line file
+```
+find in -type f -exec cat {} + | jq -r '"\(try(.url)) \([try(."title")]) \([try(."status_code")]) \([try(."content_length")]) \([try(."content_type")]) \([try(."host")]) \([try(."final_url")]) \([try(."webserver")]) \([try(."technologies")]) \([try(."a"|.[] | tostring)])"' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### jq
+<img src="https://img.shields.io/badge/language-bash-black">
+JQ for parsing json results.
+```
+cat in/*/* | jq -r '.results | .[]| "\(.url) \(.status) \(.length) \(.redirectlocation) "' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
+### masscan-ip-port
+<img src="https://img.shields.io/badge/language-bash-black">
+Parse masscan's output into IP:Port pairs (e.g. 127.0.0.1:80)
+```
+find in -type f -exec cat {} + | grep 'Host' | awk -F'[ /]' '{print $3":"$5}' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
