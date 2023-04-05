@@ -189,3 +189,11 @@ for i in {1..10};do echo $i;done | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### get-asn-prefixes
+<img src="https://img.shields.io/badge/language-bash-black">
+Get asn prefixes by id.
+```
+curl --silent https://stat.ripe.net/data/announced-prefixes/data.json\?resource\=ASN_ID | jq -r '.data.prefixes[].prefix' | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
