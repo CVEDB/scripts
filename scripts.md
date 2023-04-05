@@ -165,3 +165,11 @@ find in -type f -exec cat {} + | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### find-strings-in-meg-responses
+<img src="https://img.shields.io/badge/language-bash-black">
+Find string in meg responses and print urls.
+```
+for f in $(find in -mindepth 3 -type f -exec grep 'root:' -R {} + | cut -d":" -f1 | sort -u); do echo "$(head -1 $f) [VULNERABLE]" | egrep '^http'; done | tee out/output.txt
+```
+Contributed by [gliga](https://cvedb.github.io)
+---
