@@ -181,3 +181,11 @@ pwgen -N 100 5 | tee out/output.txt
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### generate-sequence-of-numbers
+<img src="https://img.shields.io/badge/language-bash-black">
+Sequence of numbers generator!
+```
+for i in {1..10};do echo $i;done | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
