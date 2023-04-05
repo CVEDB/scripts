@@ -1,0 +1,6 @@
+name: awk-print-last-column
+description: Prints last column of a files in in folder.
+author: cvedb
+author_info: https://cvedb.github.io
+script: find in -type f -exec cat {} +  | awk '{print $(NF)}' | tee out/output.txt
+language: bash
