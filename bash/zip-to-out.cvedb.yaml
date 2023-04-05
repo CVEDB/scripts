@@ -1,0 +1,6 @@
+name: zip-to-out
+description: Zip all files and move to out directory
+author: cvedb
+author_info: https://cvedb.github.io
+script: zip -r output.zip in && mv output.zip out
+language: bash
