@@ -409,6 +409,14 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### replace-dots-with-dash
+<img src="https://img.shields.io/badge/language-bash-black">
+Replacing dot in strings with dashes
+```
+cat in/*/* | sed s/[.]/-/g | tee out/output.txt
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### rsync-in-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Copy all files from in folders to out folder recursively.
