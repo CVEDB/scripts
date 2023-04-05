@@ -449,6 +449,26 @@ rsync -rtv in out
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### securitytrails-reverse-lookup
+<img src="https://img.shields.io/badge/language-bash-black">
+Reverse-lookup a list of domains on SecurityTrails to retrieve hostnames
+```
+API_KEY='ADD_SECURITYTRAILS_API_KEY'
+IP_ADDRESSES_INPUT_NODE='ADD_INPUT_NODE_ID'
+# IP_ADDRESSES_INPUT_NODE='http-input-1'
+
+while read ip; do
+  echo "$ip"
+  curl --request POST \
+    --url 'https://api.securitytrails.com/v1/domains/list?include_ips=true' \
+    --header "APIKEY: $API_KEY" \
+    --header 'Content-Type: application/json' \
+    --data '{"filter":{"ipv4":"'$ip'"}}' | jq -r '.records[].hostname' | tee -a out/output.txt
+done < in/$IP_ADDRESSES_INPUT_NODE/output.txt
+
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### unzip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Unzip files in in folder to out folder
