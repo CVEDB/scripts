@@ -409,6 +409,14 @@ find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .
 ```
 Contributed by [cvedb](https://cvedb.github.io)
 ---
+### rsync-in-out
+<img src="https://img.shields.io/badge/language-bash-black">
+Copy all files from in folders to out folder recursively.
+```
+rsync -rtv in out
+```
+Contributed by [cvedb](https://cvedb.github.io)
+---
 ### unzip-to-out
 <img src="https://img.shields.io/badge/language-bash-black">
 Unzip files in in folder to out folder
