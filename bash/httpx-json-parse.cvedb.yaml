@@ -1,9 +1,0 @@
-name: httpx-json-parse
-description: Parse httpx JSON output to line by line file
-author: cvedb
-author_info: https://cvedb.github.io
-script:
-  find in -type f -exec cat {} + | jq -r '"\(try(.url)) \([try(."title")]) \([try(."status_code")])
-  \([try(."content_length")]) \([try(."content_type")]) \([try(."host")]) \([try(."final_url")])
-  \([try(."webserver")]) \([try(."technologies")]) \([try(."a"|.[] | tostring)])"' | tee out/output.txt
-language: bash

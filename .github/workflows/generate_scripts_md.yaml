@@ -17,17 +17,21 @@ jobs:
           script: |
             import os
             import oyaml as yaml
+
             def create_script_section(script):
                 language_colors = {
                     'bash': 'black'
                 }
+
                 md = """### {name}
             <img src="https://img.shields.io/badge/language-{language}-{color}">
             {description}
+
             ```
             {script}
             ```
             Contributed by [{author}]({author_info})
+
             ---
             """.format(
                     name=script['name'],
@@ -39,8 +43,10 @@ jobs:
                     author_info=script['author_info']
                 )
                 return md
+
             l = os.listdir('bash')
             l.sort()
+
             output = open("scripts.md", "w")
             for i in l:
                 f = open('bash/'+i)
@@ -49,8 +55,8 @@ jobs:
             output.close()
       - name: Commit files
         run: |
-          git config --local user.email "gh-wf-commiter@log4j.com"
-          git config --local user.name "gitworkflows"
+          git config --local user.email "gh-wf-commiter@khulnasoft.com"
+          git config --local user.name "cvedb-workflows"
           git add scripts.md
           git commit -m "Update scripts.md"
       - name: Push changes

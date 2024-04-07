@@ -5,7 +5,7 @@ Add . at the end of each line in files.
 ```
 find in -type f -exec cat {} + | sed 's/$/./' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### add-line-to-shodan-query
@@ -15,7 +15,7 @@ Add lines to values of shodan query.
 ```
 find in -type f -exec cat {} + | awk '{ if ($0 != "") print "ssl.cert.subject.cn:\"*."$0"\""}'  | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### append-headers-to-csv
@@ -25,7 +25,7 @@ Append headers supplied to csv file without them.
 ```
 (echo "vulnerability_id,tags,description,authors,severity,type,host,ip,match,vuln_name,extracted_results,timestamp" && find in -type f -exec cat {} +) > out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### awk-print-last-column
@@ -35,7 +35,7 @@ Prints last column of a files in in folder.
 ```
 find in -type f -exec cat {} +  | awk '{print $(NF)}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### awk-take-first-row
@@ -45,7 +45,7 @@ Extract first column from all files in in directory.
 ```
 find in -type f -exec cat {} + | awk -F " " '{print $1}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### awk-take-second-row
@@ -55,7 +55,7 @@ Extract second column from all files in in directory.
 ```
 find in -type f -exec cat {} + | awk -F " " '{print $2}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### awk-take-third-row
@@ -65,7 +65,7 @@ Extract third column from all files in in directory.
 ```
 find in -type f -exec cat {} + | awk -F " " '{print $3}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### cat-all-in
@@ -75,7 +75,7 @@ Cat all files in in directory
 ```
 cat in/*/* | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### cat-from-to-lines
@@ -85,7 +85,7 @@ Cat file from line number to line number with sed.
 ```
 sed -n 1,100p in/*/* | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### clone-github-repository
@@ -115,7 +115,7 @@ cd $(echo $REPOSITORY | awk -F '/' '{print $2}')
 ls | tee /hive/out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### convert-piped-ip-ports
@@ -125,7 +125,7 @@ Converts output with | delimiter to ip:port format.
 ```
 find in -type f -exec cat {} + | awk -F"|" '{print $1":"$2}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### count-lines-in-all-files
@@ -135,7 +135,7 @@ Used to quickly count all lines inside of all files in in folder.
 ```
 find in -type f -exec cat {} + | wc -l | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### create-wordlist-from-robots-txt
@@ -145,7 +145,7 @@ One-liner for generating wordlists from robots.txt
 ```
 find in/ -mindepth 3 -type f -exec cat {} + | egrep -w "Disallow|Allow: " | awk '{print $2}' | sed 's/^\///' | sed 's/\/$//' | sed '/^[[:space:]]*$/d'| sed 's/\*$//' | sed 's/^\*//' | sed 's/\/$//' | sed -e 's/\*\///g' | sed -e s/\*//g | uniq | tee out/output.txt
 ```
-Contributed by [kljunowsky](https://cvedb.github.io)
+Contributed by [kljunowsky](https://cvedb.khulnasoft.com)
 
 ---
 ### delete-dot-as-first-char
@@ -155,7 +155,7 @@ Delete dot when first character, usefull for parsing subdomains with not valid r
 ```
 cat in/*/* | sed 's/^\.//' | sort -n | uniq | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### delete-dot-as-last-char
@@ -165,7 +165,7 @@ Delete dot when it is last character, massdns anyone?
 ```
 cat in/*/* | sed 's/\.$//' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### egrep-multiple-values
@@ -175,7 +175,7 @@ Egrep multiple values and print last in array.
 ```
 cat in/*/* | egrep -w 'url|robots|linkfinder' | awk -F" " '{print $NF}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### egrep-urls-from-list-of-files
@@ -185,7 +185,7 @@ Extract urls from list of files with regex.
 ```
 find in -type f -exec cat {} + | egrep -o 'https?://[^ ]+' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### eof-raw-data
@@ -198,7 +198,7 @@ ADD_CONTENT_HERE
 EOF
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### extract-ips-with-regex
@@ -208,7 +208,7 @@ Extract ip addresses from files with regex.
 ```
 find in -type f -exec cat {} + | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### find-strings-in-meg-responses
@@ -218,7 +218,7 @@ Find string in meg responses and print urls.
 ```
 for f in $(find in -mindepth 3 -type f -exec grep 'root:' -R {} + | cut -d":" -f1 | sort -u); do echo "$(head -1 $f) [VULNERABLE]" | egrep '^http'; done | tee out/output.txt
 ```
-Contributed by [gliga](https://cvedb.github.io)
+Contributed by [gliga](https://cvedb.khulnasoft.com)
 
 ---
 ### generate-random-passwords
@@ -228,7 +228,7 @@ Utility to generate random passwords based on pwgen.
 ```
 pwgen -N 100 5 | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### generate-sequence-of-numbers
@@ -238,7 +238,7 @@ Sequence of numbers generator!
 ```
 for i in {1..10};do echo $i;done | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-asn-prefixes
@@ -248,7 +248,7 @@ Get asn prefixes by id.
 ```
 curl --silent https://stat.ripe.net/data/announced-prefixes/data.json\?resource\=ASN_ID | jq -r '.data.prefixes[].prefix' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-inventory-cloud
@@ -289,7 +289,7 @@ find out -type f -empty -delete
 cat out/* > out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-inventory-hostnames
@@ -330,7 +330,7 @@ find out -type f -empty -delete
 cat out/* > out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-inventory-servers
@@ -371,7 +371,7 @@ find out -type f -empty -delete
 cat out/* > out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-inventory-spider
@@ -412,7 +412,7 @@ find out -type f -empty -delete
 cat out/* > out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-inventory-urls
@@ -453,7 +453,7 @@ find out -type f -empty -delete
 cat out/* > out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### get-js-links-from-urls
@@ -463,7 +463,7 @@ Get all js links from list of urls
 ```
 find in -type f -exec cat {} +  | grep -Eo "https?://\S+?\.js" | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### gunzip-jsons-to-out
@@ -473,7 +473,7 @@ Extract gunzip file and cat json files to out file.
 ```
 gunzip in/*/*.gz && find in -name '*.json' -exec cat {} \;  | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### httpx-json-parse
@@ -483,7 +483,7 @@ Parse httpx JSON output to line by line file
 ```
 find in -type f -exec cat {} + | jq -r '"\(try(.url)) \([try(."title")]) \([try(."status_code")]) \([try(."content_length")]) \([try(."content_type")]) \([try(."host")]) \([try(."final_url")]) \([try(."webserver")]) \([try(."technologies")]) \([try(."a"|.[] | tostring)])"' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### jq
@@ -493,7 +493,7 @@ JQ for parsing json results.
 ```
 cat in/*/* | jq -r '.results | .[]| "\(.url) \(.status) \(.length) \(.redirectlocation) "' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### masscan-ip-port
@@ -503,7 +503,7 @@ Parse masscan's output into IP:Port pairs (e.g. 127.0.0.1:80)
 ```
 find in -type f -exec cat {} + | grep 'Host' | awk -F'[ /]' '{print $3":"$5}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### mv-regex-files
@@ -513,7 +513,7 @@ Move specific files from in to out.
 ```
 mv in/*/*-takeover* out/
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### parse-nuclei-to-csv
@@ -523,7 +523,7 @@ Parse nuclei JSON output to create valid csv
 ```
 find in -type f -exec cat {} + | jq '. | {vulnerability_id: .templateID, tags: .info.tags, description: .info.description, authors: .info.author, severity: .info.severity, type: .type, host: .host, ip: .ip, match: .matched, vuln_name: .matcher_name, extracted_results: .extracted_results|tostring, timestamp: .timestamp}' | jq -r 'to_entries|map(.value)|@csv' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### print-to-lower
@@ -533,7 +533,7 @@ Print file content to lowecase
 ```
 cat in/*/* | awk '{print tolower($0)}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### recursively-cat-all
@@ -543,7 +543,7 @@ Recursively cat all files in a folder.
 ```
 find in -type f -exec cat {} + | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### recursively-cat-with-extension
@@ -553,7 +553,7 @@ Cat all files with custom extension
 ```
 find in -name '*.txt' -exec cat {} \;  | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### remove-whitespaces
@@ -563,7 +563,7 @@ Remove whitespaces to files when appending values at the end of lines.
 ```
 find in -type f -exec cat {} + | tr  -d '[:blank:]' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### replace-char-with-new-line
@@ -573,7 +573,7 @@ Replaces character with new lines, sorts and deduplicates.
 ```
 find in -type f -exec cat {} + | tr . '\n' | sort -n | uniq | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### replace-dots-with-dash
@@ -583,7 +583,7 @@ Replacing dot in strings with dashes
 ```
 cat in/*/* | sed s/[.]/-/g | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### rsync-in-out
@@ -593,7 +593,7 @@ Copy all files from in folders to out folder recursively.
 ```
 rsync -rtv in out
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### rustscan-ip-port
@@ -620,7 +620,7 @@ while read line; do
 done < merged.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### securitytrails-reverse-lookup
@@ -642,7 +642,7 @@ while read ip; do
 done < in/$IP_ADDRESSES_INPUT_NODE/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### sed-add-at-beginning
@@ -652,7 +652,7 @@ Add string at the beginning of each line using sed.
 ```
 find in -type f -exec cat {} + | sed 's/^/https:\/\//' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### sed-add-at-end
@@ -662,7 +662,7 @@ Add string at the end of each line using sed.
 ```
 find in -type f -exec cat {} + | sed 's/$/\/FUZZ/' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### sed-replace-words-in-file
@@ -672,7 +672,7 @@ Replace "foo" "bar" with words you want to replace in in folder.
 ```
 sed 's/foo/bar/g' in/* | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### sort-uniq
@@ -682,7 +682,7 @@ Sort all data and delete duplicates in files in in directory.
 ```
 find in -type f -exec cat {} +  | sort -n | uniq | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### sort
@@ -692,7 +692,7 @@ Sort all data in files in in directory.
 ```
 find in -type f -exec cat {} + | sort | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### ungrep-multiple-values
@@ -702,7 +702,7 @@ Ungrep multiple strings.
 ```
 cat in/*/* | egrep -wv 'url|robots|linkfinder' | awk -F" " '{print $NF}' | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### unzip-to-out
@@ -712,7 +712,7 @@ Unzip files in in folder to out folder
 ```
 unzip in/*/*.zip -d out
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### wget-list-to-out
@@ -722,7 +722,7 @@ Wget list of urls and output to out directory
 ```
 wget -i in/*/* --directory-prefix out
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### whois-get-registrant-organization
@@ -736,7 +736,7 @@ for domain in `find in -type f -exec cat {} +`; do
 done | tee out/output.txt
 
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### wildcard-domains-from-burp-scope-file
@@ -746,7 +746,7 @@ Get all wildcard domains from Burp scope json file.
 ```
 find in -type f -exec cat {} + | jq '.target.scope.include[] | .host' | grep "*" | sed 's/\\//g' | sed 's/\"^.\*//g' | sed 's/$\"//g' | sed 's/^\.//'  | sort -n | uniq | tee out/output.txt
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---
 ### zip-to-out
@@ -756,6 +756,6 @@ Zip all files and move to out directory
 ```
 zip -r output.zip in && mv output.zip out
 ```
-Contributed by [cvedb](https://cvedb.github.io)
+Contributed by [cvedb](https://cvedb.khulnasoft.com)
 
 ---

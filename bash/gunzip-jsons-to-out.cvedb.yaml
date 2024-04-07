@@ -1,6 +1,0 @@
-name: gunzip-jsons-to-out
-description: Extract gunzip file and cat json files to out file.
-author: cvedb
-author_info: https://cvedb.github.io
-script: gunzip in/*/*.gz && find in -name '*.json' -exec cat {} \;  | tee out/output.txt
-language: bash

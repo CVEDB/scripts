@@ -1,0 +1,6 @@
+name: delete-dot-as-last-char
+description: Delete dot when it is last character, massdns anyone?
+author: cvedb
+author_info: https://cvedb.khulnasoft.com
+script: cat in/*/* | sed 's/\.$//' | tee out/output.txt
+language: bash

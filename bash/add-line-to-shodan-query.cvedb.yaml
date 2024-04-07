@@ -1,7 +1,0 @@
-name: add-line-to-shodan-query
-description: Add lines to values of shodan query.
-author: cvedb
-author_info: https://cvedb.github.io
-script: find in -type f -exec cat {} + | awk '{ if ($0 != "") print "ssl.cert.subject.cn:\"*."$0"\""}'  |
-  tee out/output.txt
-language: bash

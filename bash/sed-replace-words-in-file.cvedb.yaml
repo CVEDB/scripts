@@ -1,6 +1,0 @@
-name: sed-replace-words-in-file
-description: Replace "foo" "bar" with words you want to replace in in folder.
-author: cvedb
-author_info: https://cvedb.github.io
-script: sed 's/foo/bar/g' in/* | tee out/output.txt
-language: bash

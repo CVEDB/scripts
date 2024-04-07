@@ -1,6 +1,0 @@
-name: awk-take-second-row
-description: Extract second column from all files in in directory.
-author: cvedb
-author_info: https://cvedb.github.io
-script: find in -type f -exec cat {} + | awk -F " " '{print $2}' | tee out/output.txt
-language: bash

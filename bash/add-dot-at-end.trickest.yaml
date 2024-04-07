@@ -1,0 +1,6 @@
+name: add-dot-at-end
+description: Add . at the end of each line in files.
+author: cvedb
+author_info: https://cvedb.khulnasoft.com
+script: find in -type f -exec cat {} + | sed 's/$/./' | tee out/output.txt
+language: bash

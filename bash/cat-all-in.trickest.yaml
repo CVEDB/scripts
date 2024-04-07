@@ -1,0 +1,6 @@
+name: cat-all-in
+description: Cat all files in in directory
+author: cvedb
+author_info: https://cvedb.khulnasoft.com
+script: cat in/*/* | tee out/output.txt
+language: bash

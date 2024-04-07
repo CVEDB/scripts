@@ -1,6 +1,0 @@
-name: recursively-cat-all
-description: Recursively cat all files in a folder.
-author: cvedb
-author_info: https://cvedb.github.io
-script: find in -type f -exec cat {} + | tee out/output.txt
-language: bash

@@ -1,6 +1,0 @@
-name: unzip-to-out
-description: Unzip files in in folder to out folder
-author: cvedb
-author_info: https://cvedb.github.io
-script: unzip in/*/*.zip -d out
-language: bash
