@@ -55,8 +55,8 @@ jobs:
             output.close()
       - name: Commit files
         run: |
-          git config --local user.email "gh-wf-commiter@khulnasoft.com"
-          git config --local user.name "cvedb-workflows"
+          git config --local user.email "118260833+gitworkflows@users.noreply.github.com"
+          git config --local user.name "gitworkflows"
           git add scripts.md
           git commit -m "Update scripts.md"
       - name: Push changes
